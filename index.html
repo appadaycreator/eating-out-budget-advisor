@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外食費・食費最適化診断 | 外食バランスと節約プランを無料チェック</title>
+<meta name="description" content="外食頻度・家族構成・食費予算から最適な外食バランスと節約プランを診断。外食費が多すぎるか適切か判定し、年間節約額を試算します。">
+<link rel="canonical" href="https://appadaycreator.github.io/eating-out-budget-advisor/">
+<meta property="og:title" content="外食費・食費最適化診断 | 外食バランスと節約プランを診断">
+<meta property="og:description" content="外食頻度・家族構成・予算から最適な外食バランスと節約プランを診断！">
+<meta property="og:url" content="https://appadaycreator.github.io/eating-out-budget-advisor/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "外食費・食費最適化診断",
+  "url": "https://appadaycreator.github.io/eating-out-budget-advisor/",
+  "description": "外食頻度・家族構成・食費予算から最適な外食バランスと節約プランを診断",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}
+}
+</script>
+<!-- GTM -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","s3t9vl8h3v");</script>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-amber-50 to-red-50 min-h-screen">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+window.onerror=function(m,s,l,c,e){console.warn('Error:',m);return true;};
+window.addEventListener('unhandledrejection',function(e){console.warn('Rejection:',e.reason);});
+</script>
+
+<div class="max-w-2xl mx-auto px-4 py-6">
+  <div class="text-center mb-6">
+    <h1 class="text-2xl font-bold text-red-700 mb-2">🍽️ 外食費・食費最適化診断</h1>
+    <p class="text-gray-600 text-sm">外食頻度・家族構成・予算から最適な食費バランスを診断します</p>
+  </div>
+
+  <div class="mb-4 text-center">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div id="quizArea" class="bg-white rounded-2xl shadow-lg p-6">
+    <div class="mb-4">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-sm text-gray-500">質問 <span id="qNum">1</span>/8</span>
+        <span class="text-sm text-red-600 font-medium"><span id="qPct">12</span>%</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2">
+        <div id="progressBar" class="bg-red-500 h-2 rounded-full transition-all duration-500" style="width:12%"></div>
+      </div>
+    </div>
+    <div id="questionContainer"></div>
+    <div class="flex gap-3 mt-4">
+      <button id="backBtn" onclick="prevQ()" class="hidden flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 rounded-xl transition-colors">← 戻る</button>
+      <button onclick="nextQ()" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-colors">次へ →</button>
+    </div>
+  </div>
+
+  <div id="resultArea" class="hidden">
+    <div class="bg-white rounded-2xl shadow-lg p-6 mb-4">
+      <div class="text-center mb-4">
+        <div class="text-5xl mb-2" id="rEmoji">🍽️</div>
+        <h2 class="text-xl font-bold text-gray-800 mb-1">外食費診断結果</h2>
+        <div class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-2" id="rBadge"></div>
+        <p class="text-sm text-gray-500" id="rDesc"></p>
+      </div>
+
+      <!-- Score meter -->
+      <div class="bg-gray-50 rounded-xl p-4 mb-4">
+        <div class="flex justify-between text-xs text-gray-500 mb-1">
+          <span>節約型</span><span>適切</span><span>使いすぎ</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+          <div id="scoreMeter" class="h-4 rounded-full transition-all duration-700" style="width:50%"></div>
+        </div>
+        <p class="text-center text-sm font-bold" id="scoreLabel"></p>
+      </div>
+
+      <div class="bg-red-50 rounded-xl p-4 mb-4">
+        <h3 class="font-bold text-red-800 mb-2">💰 節約額試算</h3>
+        <div id="savingCalc" class="text-sm text-red-700"></div>
+      </div>
+
+      <div class="bg-gray-50 rounded-xl p-4 mb-4">
+        <h3 class="font-bold text-gray-800 mb-2">📋 おすすめ食費管理法</h3>
+        <div id="tips" class="text-sm text-gray-700 space-y-2"></div>
+      </div>
+
+      <div class="border border-amber-200 rounded-xl p-4 bg-amber-50 mb-4">
+        <p class="text-sm font-bold text-amber-700 mb-2">📚 節約レシピ・食費管理を学ぶ</p>
+        <a href="https://www.amazon.co.jp/s?k=節約レシピ+食費+管理+本&tag=appadaycrea0f-22" target="_blank" class="block bg-orange-500 hover:bg-orange-600 text-white text-center py-2 px-4 rounded-lg text-sm font-medium mb-2">
+          🛒 Amazon で節約レシピ本を探す
+        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVCO8+GFT1HM+5JTC+60OXE" target="_blank" rel="nofollow" class="block bg-blue-500 hover:bg-blue-600 text-white text-center py-2 px-4 rounded-lg text-sm font-medium mb-2">
+          🎧 audiobook.jpで節約術を学ぶ
+        </a>
+        <img src="https://www11.a8.net/0.gif?a8mat=4AVCO8+GFT1HM+5JTC+60OXE" width="1" height="1" style="display:none" alt="">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVCO8+3ORU2Y+5JTC+5YRHE" target="_blank" rel="nofollow" class="block bg-green-500 hover:bg-green-600 text-white text-center py-2 px-4 rounded-lg text-sm font-medium">
+          📖 ヨンデミーで家計管理を学ぶ
+        </a>
+        <img src="https://www11.a8.net/0.gif?a8mat=4AVCO8+3ORU2Y+5JTC+5YRHE" width="1" height="1" style="display:none" alt="">
+      </div>
+
+      <button onclick="restart()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-colors">
+        🔄 もう一度診断する
+      </button>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow p-4">
+      <h3 class="text-sm font-bold text-gray-700 mb-3">🔗 関連サービス</h3>
+      <div class="grid grid-cols-1 gap-2">
+        <a href="https://appadaycreator.github.io/household-budget-analyzer/" class="flex items-center p-2 bg-gray-50 rounded-lg hover:bg-gray-100">
+          <span class="text-lg mr-2">💰</span><span class="text-sm text-gray-700">家計分析ツール</span>
+        </a>
+        <a href="https://appadaycreator.github.io/calorie-calculator/" class="flex items-center p-2 bg-gray-50 rounded-lg hover:bg-gray-100">
+          <span class="text-lg mr-2">🥗</span><span class="text-sm text-gray-700">カロリー計算機</span>
+        </a>
+        <a href="https://appadaycreator.github.io/subscription-calculator/" class="flex items-center p-2 bg-gray-50 rounded-lg hover:bg-gray-100">
+          <span class="text-lg mr-2">📱</span><span class="text-sm text-gray-700">サブスクリプション計算機</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {id:'budget', q:'Q1. 月の食費予算（外食含む全体）はどのくらいですか？', opts:['2万円未満','2〜3万円','3〜5万円','5〜8万円','8〜12万円','12万円以上']},
+  {id:'frequency', q:'Q2. 週に外食する回数はどのくらいですか？', opts:['ほぼなし（月1〜2回）','週1回程度','週2〜3回','週4〜5回','ほぼ毎日（週6日以上）']},
+  {id:'family', q:'Q3. 家族構成は？', opts:['一人暮らし','2人（夫婦・カップル）','子どもあり3〜4人家族','子どもあり5人以上大家族']},
+  {id:'purpose', q:'Q4. 外食の主な目的は？', opts:['料理が面倒・時短のため','楽しみ・気分転換','仕事の接待・会食','友人・家族との記念日'],},
+  {id:'lunch', q:'Q5. 平日のランチはどこで食べていますか？', opts:['自炊（弁当・おにぎり）','社員食堂・コンビニ（500円程度）','外食（ランチ1,000円〜）','在宅ワークで自炊'],},
+  {id:'delivery', q:'Q6. フードデリバリーの利用頻度は？', opts:['ほとんど使わない','月1〜2回（たまに）','週1〜2回','ほぼ毎日使う']},
+  {id:'foodDelivery', q:'Q7. 食材宅配サービスの利用状況は？', opts:['使っていない','生協・コープを利用','Oisixなどミールキット利用','複数サービス利用中']},
+  {id:'motivation', q:'Q8. 食費節約への意欲は？', opts:['かなり節約したい','少し節約できればよい','現状でいい','食事の質を落としたくない']},
+];
+
+let answers = {}, currentQ = 0;
+
+function renderQ() {
+  const q = QUESTIONS[currentQ];
+  document.getElementById('qNum').textContent = currentQ + 1;
+  const pct = Math.round(((currentQ + 1) / QUESTIONS.length) * 100);
+  document.getElementById('qPct').textContent = pct;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('backBtn').classList.toggle('hidden', currentQ === 0);
+  document.getElementById('questionContainer').innerHTML = `
+    <h2 class="text-lg font-bold text-gray-800 mb-4">${q.q}</h2>
+    <div class="space-y-2">
+      ${q.opts.map((opt, i) => `
+        <button onclick="selectOpt(${i})"
+          class="w-full text-left px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all
+          ${answers[q.id] === i ? 'border-red-500 bg-red-50 text-red-700' : 'border-gray-200 bg-gray-50 hover:border-red-300 text-gray-700'}">
+          ${opt}
+        </button>`).join('')}
+    </div>`;
+}
+
+function selectOpt(i) { answers[QUESTIONS[currentQ].id] = i; renderQ(); }
+function prevQ() { if (currentQ > 0) { currentQ--; renderQ(); } }
+function nextQ() {
+  if (answers[QUESTIONS[currentQ].id] === undefined) { alert('選択してください'); return; }
+  if (currentQ < QUESTIONS.length - 1) { currentQ++; renderQ(); }
+  else showResult();
+}
+
+function showResult() {
+  document.getElementById('quizArea').classList.add('hidden');
+  document.getElementById('resultArea').classList.remove('hidden');
+
+  const budget = answers.budget; // 0-5
+  const frequency = answers.frequency; // 0-4
+  const family = answers.family; // 0-3
+  const lunch = answers.lunch; // 0-3
+  const delivery = answers.delivery; // 0-3
+  const motivation = answers.motivation; // 0-3
+
+  // Score: 0=節約型, 100=使いすぎ
+  let score = 0;
+  score += frequency * 20;
+  score += lunch === 2 ? 20 : lunch === 1 ? 10 : 0;
+  score += delivery * 15;
+
+  const budgetAmounts = [15000, 25000, 40000, 65000, 100000, 150000];
+  const monthlyBudget = budgetAmounts[budget];
+  const familyCounts = [1, 2, 3.5, 5];
+  const familySize = familyCounts[family];
+  const perPersonBudget = monthlyBudget / familySize;
+
+  // Reference budget per person
+  const refBudget = 30000; // 1人あたりの目安
+  const budgetRatio = perPersonBudget / refBudget;
+
+  if (budgetRatio > 1.5) score += 30;
+  else if (budgetRatio > 1.2) score += 15;
+
+  score = Math.min(100, Math.max(0, score));
+
+  let emoji, badge, badgeClass, desc;
+  if (score >= 70) {
+    emoji = '🚨'; badge = '外食費が多すぎ！'; badgeClass = 'bg-red-100 text-red-700';
+    desc = '外食・デリバリーへの支出が家計を圧迫している可能性があります。計画的な食費管理が必要です。';
+  } else if (score >= 40) {
+    emoji = '⚠️'; badge = 'やや多め・見直しを'; badgeClass = 'bg-yellow-100 text-yellow-700';
+    desc = '外食費は平均的な範囲ですが、少し改善の余地があります。工夫次第で年間数万円の節約が可能です。';
+  } else {
+    emoji = '✅'; badge = '節約型・バランス良好'; badgeClass = 'bg-green-100 text-green-700';
+    desc = '食費管理ができています。このまま継続しながら、楽しい外食も大切にしましょう。';
+  }
+
+  document.getElementById('rEmoji').textContent = emoji;
+  document.getElementById('rBadge').textContent = badge;
+  document.getElementById('rBadge').className = `inline-block px-4 py-1 rounded-full text-sm font-bold mb-2 ${badgeClass}`;
+  document.getElementById('rDesc').textContent = desc;
+
+  // Score meter
+  const meterColors = score >= 70 ? '#ef4444' : score >= 40 ? '#f59e0b' : '#22c55e';
+  document.getElementById('scoreMeter').style.width = score + '%';
+  document.getElementById('scoreMeter').style.background = meterColors;
+  document.getElementById('scoreLabel').textContent = `外食費スコア: ${score}/100`;
+
+  // Saving calc
+  const outingCost = frequency === 0 ? 3000 : frequency === 1 ? 10000 : frequency === 2 ? 25000 : frequency === 3 ? 40000 : 60000;
+  const deliveryCost = delivery === 0 ? 0 : delivery === 1 ? 3000 : delivery === 2 ? 15000 : delivery === 3 ? 30000 : 0;
+  const totalEatOut = outingCost + deliveryCost;
+  const targetEatOut = Math.round(monthlyBudget * 0.25);
+  const monthlySaving = Math.max(0, totalEatOut - targetEatOut);
+  const yearlySaving = monthlySaving * 12;
+
+  document.getElementById('savingCalc').innerHTML = `
+    <div class="grid grid-cols-2 gap-2">
+      <div><span class="text-gray-500">推定外食費（月）</span><br><strong>${totalEatOut.toLocaleString()}円</strong></div>
+      <div><span class="text-gray-500">目標外食費（月）</span><br><strong>${targetEatOut.toLocaleString()}円</strong></div>
+      <div><span class="text-gray-500">削減可能額（月）</span><br><strong class="text-red-700">${monthlySaving.toLocaleString()}円</strong></div>
+      <div><span class="text-gray-500">年間節約見込み</span><br><strong class="text-red-700 text-lg">${yearlySaving.toLocaleString()}円</strong></div>
+    </div>`;
+
+  // Tips based on answers
+  const tips = [];
+  if (frequency >= 3) tips.push({ icon: '🍱', text: '週の外食回数を1〜2回に減らすだけで大きな節約に。「まとめ調理」で平日の手抜きをなくしましょう' });
+  if (delivery >= 2) tips.push({ icon: '🛵', text: 'デリバリーは割高。週1回を上限にするルールを決めてみましょう' });
+  if (lunch === 2) tips.push({ icon: '🥡', text: '週3日だけお弁当を持参するだけで月5,000〜8,000円の節約になります' });
+  tips.push({ icon: '📱', text: '食費は家計簿アプリで記録・見える化。意識するだけで支出が減ります' });
+  tips.push({ icon: '🛒', text: '週1回まとめ買い＋献立を決めておくと食材ロスが減り節約に' });
+  if (motivation <= 1) tips.push({ icon: '🎯', text: '「外食は週末のご褒美」とルールを決めると無理なく節約できます' });
+  tips.push({ icon: '📅', text: '月の食費予算を現金で管理するか、クレカ1枚に集約して把握しやすくしましょう' });
+
+  document.getElementById('tips').innerHTML = tips.map(t => `
+    <div class="flex items-start gap-2 bg-white rounded-lg p-2">
+      <span class="text-lg">${t.icon}</span>
+      <p>${t.text}</p>
+    </div>`).join('');
+}
+
+function restart() {
+  answers = {}; currentQ = 0;
+  document.getElementById('resultArea').classList.add('hidden');
+  document.getElementById('quizArea').classList.remove('hidden');
+  renderQ();
+}
+
+renderQ();
+</script>
+</body>
+</html>
