@@ -113,7 +113,7 @@ window.onerror=function(m,s,l,c,e){console.warn('Error:',m);return true;};
 window.addEventListener('unhandledrejection',function(e){console.warn('Rejection:',e.reason);});
 </script>
 
-<div class="max-w-2xl mx-auto px-4 py-6">
+<div class="max-w-2xl mx-auto px-4 py-6" role="main">
   <div class="text-center mb-6">
     <h1 class="text-2xl font-bold text-red-700 mb-2">🍽️ 外食費・食費最適化診断</h1>
     <p class="text-gray-600 text-sm">外食頻度・家族構成・予算から最適な食費バランスを診断します</p>
@@ -136,8 +136,8 @@ window.addEventListener('unhandledrejection',function(e){console.warn('Rejection
     </div>
     <div id="questionContainer"></div>
     <div class="flex gap-3 mt-4">
-      <button id="backBtn" onclick="prevQ()" class="hidden flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 rounded-xl transition-colors">← 戻る</button>
-      <button onclick="nextQ()" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-colors">次へ →</button>
+      <button id="backBtn" onclick="prevQ()" class="hidden flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 rounded-xl transition-colors" aria-label="← 戻る">← 戻る</button>
+      <button onclick="nextQ()" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-colors" aria-label="次へ →">次へ →</button>
     </div>
   </div>
 
