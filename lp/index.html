@@ -192,65 +192,6 @@ section{padding:62px 0}
 .footer-links{display:flex;gap:18px;flex-wrap:wrap}
 .footer-links a:hover{color:#fff}
 .site-footer .brand{color:#fff}
-
-/* ---------- Vibrancy boost & extras ---------- */
-/* richer hero backdrop + food motif */
-.hero{background:linear-gradient(180deg,#FFEFD6 0%,#FFF6EA 46%,#FFFDF9 100%)}
-.hero:after{content:"";position:absolute;left:-110px;bottom:-130px;width:320px;height:320px;background:radial-gradient(circle,rgba(59,130,246,.10),transparent 70%);border-radius:50%}
-.food-floater{position:absolute;z-index:3;filter:drop-shadow(0 7px 14px rgba(180,120,40,.32))}
-.food-floater.f1{left:-28px;top:46px;font-size:34px;animation:bob 4s ease-in-out infinite}
-.food-floater.f2{left:-6px;bottom:-14px;font-size:28px;animation:bob 5s ease-in-out infinite .5s}
-.food-floater.f3{right:40px;top:-26px;font-size:28px;animation:bob 4.6s ease-in-out infinite .25s}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-
-/* multicolor, dimensional feature icons */
-.feature-card .ic{background:linear-gradient(135deg,#FFB04A,#FF8A00);color:#fff;box-shadow:0 10px 20px rgba(255,140,0,.32)}
-.feature-card.blue .ic{background:linear-gradient(135deg,#5B9DFF,#3B82F6);box-shadow:0 10px 20px rgba(59,130,246,.32)}
-.feature-card.green .ic{background:linear-gradient(135deg,#4ADE80,#16A34A);box-shadow:0 10px 20px rgba(34,197,94,.30)}
-
-/* multicolor step circles + connecting line */
-.steps{position:relative}
-.steps:before{content:"";position:absolute;top:37px;left:8%;right:8%;height:3px;background:repeating-linear-gradient(90deg,#FFD9A6 0 10px,transparent 10px 20px);z-index:0}
-.step{z-index:1}
-.step:nth-child(1) .circle{border-color:#FFC074;background:linear-gradient(135deg,#FFF6E9,#FFE9CC)}
-.step:nth-child(2) .circle{border-color:#9FC2FF;background:linear-gradient(135deg,#EFF5FF,#DCEAFF)}
-.step:nth-child(3) .circle{border-color:#FFAEB6;background:linear-gradient(135deg,#FFF0F1,#FFDEE2)}
-.step:nth-child(4) .circle{border-color:#8FE0B0;background:linear-gradient(135deg,#EEFBF2,#D6F4E1)}
-.step:nth-child(5) .circle{border-color:#C4B0FF;background:linear-gradient(135deg,#F4EFFF,#E7DCFF)}
-.step:nth-child(6) .circle{border-color:#FFCB6E;background:linear-gradient(135deg,#FFF8EA,#FFEEC9)}
-
-/* comparison section */
-#compare{background:linear-gradient(180deg,#FFFDF9,#FFF6EA)}
-.compare-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:42px;align-items:center}
-.compare-eyebrow{display:inline-block;background:#FFE6C2;color:var(--primary-dark);font-size:12.5px;font-weight:800;padding:5px 14px;border-radius:999px;margin-bottom:14px}
-.compare-title{font-size:28px;font-weight:900;line-height:1.36}
-.compare-lead{color:var(--ink-soft);margin:16px 0 20px;font-size:15px}
-.compare-points{list-style:none;display:flex;flex-direction:column;gap:13px}
-.compare-points li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--ink)}
-.compare-points .ck{flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#34D67F,#16A34A);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:900;box-shadow:0 5px 12px rgba(34,197,94,.35);margin-top:1px}
-.compare-table-wrap{background:#fff;border-radius:20px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
-.compare-table{width:100%;border-collapse:collapse;font-size:14px}
-.compare-table th,.compare-table td{padding:13px 12px;text-align:center;border-bottom:1px solid var(--line)}
-.compare-table thead th{background:#FFF1DC;font-weight:800;color:var(--ink);font-size:13px}
-.compare-table th:first-child,.compare-table td:first-child{text-align:left;color:var(--ink-soft);font-weight:700}
-.compare-table .hl-col{background:linear-gradient(180deg,#FFF7EC,#FFEFD8)}
-.compare-table thead .hl-col{background:linear-gradient(135deg,var(--primary),#FFAE3A);color:#fff}
-.compare-table tbody tr:last-child td{border-bottom:none}
-.compare-table .yes{color:#15A34A;font-weight:900}
-.compare-table .no{color:#EF4444;font-weight:800}
-@media(max-width:860px){.compare-grid{grid-template-columns:1fr;gap:26px}}
-
-/* dimensional benefit icons */
-.benefit-card .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:linear-gradient(135deg,#FFB04A,#FF8A00);color:#fff;box-shadow:0 9px 18px rgba(255,140,0,.28)}
-.benefit-card:nth-child(2) .ic{background:linear-gradient(135deg,#5B9DFF,#3B82F6);box-shadow:0 9px 18px rgba(59,130,246,.28)}
-.benefit-card:nth-child(3) .ic{background:linear-gradient(135deg,#FF7CA8,#EC4899);box-shadow:0 9px 18px rgba(236,72,153,.28)}
-
-/* richer testimonial cards */
-.voice-avatar{box-shadow:0 0 0 3px #fff,0 4px 10px rgba(0,0,0,.12)}
-.voice-tag{display:inline-block;margin-top:10px;font-size:11.5px;font-weight:700;color:var(--primary-dark);background:#FFF1DC;border-radius:999px;padding:3px 10px}
-
-/* food motif on final CTA */
-.cta-food{position:absolute;top:14px;left:0;right:0;text-align:center;font-size:30px;letter-spacing:16px;opacity:.18;pointer-events:none;white-space:nowrap;overflow:hidden}
 </style>
 </head>
 <body>
@@ -290,9 +231,6 @@ section{padding:62px 0}
     </div>
 
     <div class="mockup">
-      <span class="food-floater f1">🍱</span>
-      <span class="food-floater f2">🥗</span>
-      <span class="food-floater f3">🍜</span>
       <div class="float-badge">もっと<br>お気軽に<br>かんたん診断</div>
       <div class="laptop">
         <div class="screen">
@@ -350,38 +288,6 @@ section{padding:62px 0}
         <h3>外食費削減シミュレーション</h3>
         <p>「月◯◯円減らしたら年間いくら？」を自動計算。ムリのない節約目標を、具体的な金額で確認できます。</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 比較（他社との違い） ===== -->
-<section id="compare">
-  <div class="wrap compare-grid">
-    <div class="compare-copy">
-      <span class="compare-eyebrow">家計簿アプリで挫折した人へ</span>
-      <h2 class="compare-title">他の家計簿サービスとは<br><span class="u">ここが違う！</span></h2>
-      <p class="compare-lead">毎日のレシート入力も、こまかな仕分けも不要。あなたの属性に合った「適正な外食費の目安」がわかるのは、この診断だけです。</p>
-      <ul class="compare-points">
-        <li><span class="ck">✓</span>同じ世代・家族構成と<b>客観的に比較</b>できる</li>
-        <li><span class="ck">✓</span>毎日の記録は<b>不要</b>。たった3分で完了</li>
-        <li><span class="ck">✓</span>「使いすぎ？」がわかる<b>適正額の目安</b>を提示</li>
-        <li><span class="ck">✓</span>年間の節約額を<b>自動でシミュレーション</b></li>
-      </ul>
-    </div>
-    <div class="compare-table-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr><th>項目</th><th class="hl-col">この診断</th><th>一般的な家計簿</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>毎日の入力</td><td class="hl-col"><span class="yes">不要</span></td><td><span class="no">必要</span></td></tr>
-          <tr><td>所要時間</td><td class="hl-col"><span class="yes">約3分</span></td><td>毎日数分〜</td></tr>
-          <tr><td>同世代との比較</td><td class="hl-col"><span class="yes">◎</span></td><td><span class="no">×</span></td></tr>
-          <tr><td>適正額の提示</td><td class="hl-col"><span class="yes">◎</span></td><td>△</td></tr>
-          <tr><td>節約シミュレーション</td><td class="hl-col"><span class="yes">◎</span></td><td><span class="no">×</span></td></tr>
-          <tr><td>料金</td><td class="hl-col"><span class="yes">無料</span></td><td>有料プランあり</td></tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </section>
@@ -467,19 +373,16 @@ section{padding:62px 0}
         <div class="voice-head"><div class="voice-avatar a">🧑</div><div class="who"><b>30代 会社員 男性</b><span>一人暮らし</span></div></div>
         <div class="stars">★★★★★</div>
         <p>「自分の外食費が多いのか分からなかったけど、同世代と比較できて納得。月1万円の削減目標が立てられました。」</p>
-        <span class="voice-tag">月1万円の削減に成功</span>
       </div>
       <div class="voice-card">
         <div class="voice-head"><div class="voice-avatar b">👩</div><div class="who"><b>40代 主婦 女性</b><span>4人家族</span></div></div>
         <div class="stars">★★★★★</div>
         <p>「家族構成に合った目安が出るのが嬉しい。デリバリーの使いすぎに気づけて、年間6万円の節約になりそうです。」</p>
-        <span class="voice-tag">年間6万円の節約見込み</span>
       </div>
       <div class="voice-card">
         <div class="voice-head"><div class="voice-avatar c">🧔</div><div class="who"><b>40代 子育て世帯 男性</b><span>3人家族</span></div></div>
         <div class="stars">★★★★☆</div>
         <p>「推移グラフで使いすぎた月がひと目で分かりました。ガマンせずQOLを保ちつつ見直せるのが良いです。」</p>
-        <span class="voice-tag">グラフで使いすぎを発見</span>
       </div>
     </div>
   </div>
@@ -502,7 +405,6 @@ section{padding:62px 0}
 
 <!-- ===== Final CTA ===== -->
 <section class="final-cta">
-  <div class="cta-food">🍔 🍜 🍣 🍙 🥗 🍛 🍱 🍔 🍜 🍣 🍙 🥗 🍛 🍱</div>
   <div class="wrap">
     <h2>あなたの外食費を見える化して、ムリなく節約！</h2>
     <a href="../index.html" class="big-btn">今すぐ診断する <span class="arr">▶</span></a>
